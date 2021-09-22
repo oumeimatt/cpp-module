@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 14:58:27 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/09/22 18:15:24 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/09/22 16:56:08 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/09/22 18:12:39 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
 #include <iostream>
 #include <string>
@@ -22,14 +22,11 @@ private:
     std::string name;
 
 public:
-    Zombie(std::string zombie_name);
+    Zombie();
     ~Zombie();
-
+    void    set_name(std::string name);    
     void announce( void );
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
-
-
-#endif
+Zombie* zombieHorde( int N, std::string name );
+#endif // !ZOMBIE_H
