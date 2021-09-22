@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.Class.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/22 11:13:44 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/09/22 11:13:51 by oel-yous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef Phonebook_CLASS_HPP
 #define Phonebook_CLASS_HPP
 
@@ -15,7 +27,6 @@ public:
 private:
 	Contact	contact[8];
     int contact_numbers;
-
 
 };
 

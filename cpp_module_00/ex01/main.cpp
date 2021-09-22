@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/22 11:13:51 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/09/22 11:13:53 by oel-yous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.Class.hpp"
 
 int main(void)
@@ -7,7 +19,7 @@ int main(void)
 
     while (1)
     {
-        std::cout << "please enter a command" << std::endl;
+        std::cout << "-----Please enter a command-----" << std::endl << ">";
         std::getline(std::cin, command);
         if (!command.compare("ADD"))
             Phonebook.add_command();
@@ -15,7 +27,5 @@ int main(void)
             Phonebook.search_command();
         else if (!command.compare("EXIT"))
             break ;
-        else
-            std::cout << "invalid command , please try ADD or SEARCH or EXIT" << std::endl;
     }
 }
