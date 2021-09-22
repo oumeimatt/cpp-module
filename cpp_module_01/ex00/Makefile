@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/22 14:55:50 by oel-yous          #+#    #+#              #
-#    Updated: 2021/09/22 14:55:52 by oel-yous         ###   ########.fr        #
+#    Created: 2021/09/22 14:55:58 by oel-yous          #+#    #+#              #
+#    Updated: 2021/09/22 14:57:28 by oel-yous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 
-NAME = Phonebook
+NAME = brainz
 
 SRCS =	main.cpp \
-		Contact.Class.cpp \
-		Phonebook.Class.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 FLAGS =  -Wall -Werror -Wextra -std=c++98
 
