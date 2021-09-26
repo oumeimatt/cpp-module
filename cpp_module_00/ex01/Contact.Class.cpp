@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:14:08 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/09/22 11:14:20 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:59:40 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,22 @@ void Contact::add_infos(void)
 std::string Contact::reformat_info(std::string info)
 {
 	std::string result;
-	for (int i = 0; i < 10 - (int)info.size(); i++)
-		result += " ";
 	if (info.size() > 10)
 	{
 		result = info.substr(0, 9);
 		result += ".";
 		return (result);
 	}
-	result += info;
-	return (result);
+	else
+		return (info);
 }
 
 void Contact::display_infos(int index)
 {
-	std::cout << "|" << "         " << index << "|" << reformat_info(infos[0]) << "|" << reformat_info(infos[1]) << "|"
-			  << reformat_info(infos[2]) << "|" << std::endl;
+	std::cout << "|" << "         " << index << "|";
+	std::cout << std::setw(10) << reformat_info(infos[0]) << "|";
+	std::cout << std::setw(10)  << reformat_info(infos[1]) << "|";
+	std::cout << std::setw(10) << reformat_info(infos[2]) << "|" << std::endl;
 }
 
 void Contact::display_contact(void)

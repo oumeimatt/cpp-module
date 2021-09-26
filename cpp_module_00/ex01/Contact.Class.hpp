@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:13:59 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/09/22 11:14:00 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:54:54 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact
 {
