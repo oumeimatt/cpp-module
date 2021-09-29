@@ -53,8 +53,8 @@ public:
 
     static Fixed& max( Fixed &lhs,  Fixed &rhs);
     static Fixed& min( Fixed &lhs,  Fixed &rhs);
-    const Fixed& max(const Fixed &lhs, const Fixed &rhs);
-    const Fixed& min(const Fixed &lhs, const Fixed &rhs);
+    static const Fixed& max(const Fixed &lhs, const Fixed &rhs);
+    static const Fixed& min(const Fixed &lhs, const Fixed &rhs);
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
