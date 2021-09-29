@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:35:41 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/09/29 13:42:37 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:00:58 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,15 @@ Fixed Fixed::operator*( Fixed const & rhs ){
 
 Fixed Fixed::operator/( Fixed const & rhs ){
     Fixed T;
-    T._fixedPointvalue = this->getRawBits() / rhs.getRawBits() * (1 << this->_fractionalBits);
+    try {
+        if (rhs.getRawBits() != 0)
+            T._fixedPointvalue = this->getRawBits() / rhs.getRawBits() * (1 << this->_fractionalBits);
+        else
+            throw 1;
+    }
+    catch(...){
+        std::cout << "you cant devide by zero ";
+    }
     return T;
 }
 
