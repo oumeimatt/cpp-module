@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 10:47:03 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/04 13:10:42 by oel-yous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 
 /*
@@ -9,7 +21,7 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat") {
 	return ;
 }
 
-WrongCat::WrongCat( const WrongCat & src ){
+WrongCat::WrongCat( const WrongCat & src ): WrongAnimal("WrongCat") {
 	std::cout << "Copy WrongCat constructor called" << std::endl;
     *this = src;
     return ;

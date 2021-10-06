@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 10:46:29 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 13:09:59 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/10/03 14:00:19 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/04 13:20:19 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Animal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal("Cat") {
-	std::cout << "Cat constructor called" << std::endl;
+Animal::Animal( std::string type ) : _Type(type) {
+	std::cout << "animal constructor called" << std::endl;
+	return ;
+}
+Animal::Animal( void ){
+	this->_Type = "";
+	std::cout << "Animal constructor called" << std::endl;
 	return ;
 }
 
-Cat::Cat( const Cat & src ) : Animal("Cat") {
-	std::cout << "Copy Cat constructor called" << std::endl;
+Animal::Animal( const Animal & src ){
+    std::cout << "Copy Animal constructor called" << std::endl;
     *this = src;
     return ;
 }
@@ -32,8 +37,8 @@ Cat::Cat( const Cat & src ) : Animal("Cat") {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat(){
-	std::cout << "Cat destructor called!" << std::endl;
+Animal::~Animal(){
+	std::cout << "Animal destructor called!" << std::endl;
 	return ;
 }
 
@@ -42,17 +47,22 @@ Cat::~Cat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs ) {
+Animal &				Animal::operator=( Animal const & rhs ) {
 	this->_Type = rhs._Type;
 	return *this;
 }
 
-/* */
+/*
 
-void				Cat::makeSound( void ) const{
-	std::cout << "--- MEOW MEOW ---" << std::endl;
-	return ;
+*/
+
+std::string 			Animal::getType( void ) const{
+	return (this->_Type);
 }
 
 
+void					Animal::makeSound( void ) const{
+	std::cout << "---SILENCE---" << std::endl;
+	return;
+}
 /* ************************************************************************** */

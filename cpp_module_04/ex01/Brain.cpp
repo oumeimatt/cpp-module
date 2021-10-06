@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 10:46:29 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 13:09:59 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/10/04 10:47:22 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/06 10:40:32 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal("Cat") {
-	std::cout << "Cat constructor called" << std::endl;
+Brain::Brain(){
+	std::cout << "Brain constructor called!" << std::endl;
 	return ;
 }
 
-Cat::Cat( const Cat & src ) : Animal("Cat") {
-	std::cout << "Copy Cat constructor called" << std::endl;
+Brain::Brain( const Brain & src ){
+	std::cout << "Copy Brain constructor called!" << std::endl;
     *this = src;
     return ;
 }
@@ -32,8 +32,8 @@ Cat::Cat( const Cat & src ) : Animal("Cat") {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat(){
-	std::cout << "Cat destructor called!" << std::endl;
+Brain::~Brain(){
+	std::cout << "Brain destructor called!" << std::endl;
 	return ;
 }
 
@@ -42,17 +42,33 @@ Cat::~Cat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs ) {
-	this->_Type = rhs._Type;
+void				Brain::setIdeas(std::string idea){
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = idea;
+}
+
+std::string			Brain::getIdea(unsigned int i){
+	return(this->ideas[i]);
+}
+Brain &				Brain::operator=( Brain const & rhs )
+{
+	if ( this != &rhs )
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = rhs.ideas[i];
+	}
 	return *this;
 }
 
-/* */
 
-void				Cat::makeSound( void ) const{
-	std::cout << "--- MEOW MEOW ---" << std::endl;
-	return ;
-}
+/*
+** --------------------------------- METHODS ----------------------------------
+*/
+
+
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
 
 
 /* ************************************************************************** */

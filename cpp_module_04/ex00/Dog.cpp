@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 10:46:40 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/04 13:10:12 by oel-yous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /*
@@ -9,7 +21,7 @@ Dog::Dog() : Animal("Dog") {
 	return ;
 }
 
-Dog::Dog( const Dog & src ){
+Dog::Dog( const Dog & src ) : Animal("Cat") {
 	std::cout << "Copy Dog constructor called" << std::endl;
     *this = src;
     return ;

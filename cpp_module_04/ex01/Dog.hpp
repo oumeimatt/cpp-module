@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 10:46:58 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 10:46:59 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/10/04 10:47:52 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/06 10:24:18 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
 # include <string>
-
-class WrongAnimal 
+# include "Animal.hpp"
+# include "Brain.hpp"
+class Dog : public Animal
 {
 
 	public:
 
-		WrongAnimal();
-		WrongAnimal( WrongAnimal const & src );
-		virtual ~WrongAnimal();
+		Dog();
+		Dog( Dog const & src );
+		virtual ~Dog();
+		virtual void makeSound() const;
+		Dog &		operator=( Dog const & rhs );
+		Brain *	getBrain( void );
+		void setBrain( std:: string idea );
 
-		WrongAnimal &		operator=( WrongAnimal const & rhs );
-		virtual std::string getType( void ) const;
-		void makeSound() const;
+	private:
+		Brain* brain;
 
-	protected:
-		WrongAnimal( std::string type );
-		std::string _Type;
 };
 
-#endif /* ***************************************************** WRONGANIMAL_H */
+#endif /* ************************************************************* DOG_H */

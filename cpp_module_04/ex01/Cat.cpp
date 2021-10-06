@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 10:46:29 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 13:09:59 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/10/04 10:47:32 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/06 10:37:08 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 
 Cat::Cat() : Animal("Cat") {
 	std::cout << "Cat constructor called" << std::endl;
+	this->brain = new Brain();
 	return ;
 }
 
-Cat::Cat( const Cat & src ) : Animal("Cat") {
+Cat::Cat( const Cat & src ): Animal("Cat"){
 	std::cout << "Copy Cat constructor called" << std::endl;
-    *this = src;
-    return ;
+	this->brain = new Brain();
+	*this = src;
+	return ;
 }
 
 
@@ -33,6 +35,7 @@ Cat::Cat( const Cat & src ) : Animal("Cat") {
 */
 
 Cat::~Cat(){
+	delete this->brain;
 	std::cout << "Cat destructor called!" << std::endl;
 	return ;
 }
@@ -43,7 +46,7 @@ Cat::~Cat(){
 */
 
 Cat &				Cat::operator=( Cat const & rhs ) {
-	this->_Type = rhs._Type;
+	*(this->brain) = *(rhs.brain);
 	return *this;
 }
 
@@ -54,5 +57,13 @@ void				Cat::makeSound( void ) const{
 	return ;
 }
 
+Brain *				Cat::getBrain( void ){
+	return (this->brain);
+}
+
+
+void				Cat::setBrain( std:: string idea ){
+	brain->setIdeas(idea);
+}
 
 /* ************************************************************************** */

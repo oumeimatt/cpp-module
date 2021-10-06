@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 10:46:58 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 10:46:59 by oel-yous         ###   ########.fr       */
+/*   Created: 2021/10/04 10:47:41 by oel-yous          #+#    #+#             */
+/*   Updated: 2021/10/05 17:45:20 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>
+# include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongAnimal 
+class Cat : public Animal
 {
 
 	public:
 
-		WrongAnimal();
-		WrongAnimal( WrongAnimal const & src );
-		virtual ~WrongAnimal();
+		Cat();
+		Cat( Cat const & src );
+		virtual ~Cat();
+		virtual void makeSound() const;
+		Cat &		operator=( Cat const & rhs );
+		Brain *getBrain( void );
+		void setBrain(std::string str);
 
-		WrongAnimal &		operator=( WrongAnimal const & rhs );
-		virtual std::string getType( void ) const;
-		void makeSound() const;
+	private:
+		Brain *brain;
 
-	protected:
-		WrongAnimal( std::string type );
-		std::string _Type;
 };
 
-#endif /* ***************************************************** WRONGANIMAL_H */
+#endif /* ************************************************************* CAT_H */

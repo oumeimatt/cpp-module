@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 14:00:19 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/04 10:17:07 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/04 13:20:33 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::string 			Animal::getType( void ) const{
 
 
 void					Animal::makeSound( void ) const{
-	std::cout << "---PAPAPAPAPA---" << std::endl;
+	std::cout << "---SILENCE---" << std::endl;
 	return;
 }
 /* ************************************************************************** */
