@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:45:36 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/01 12:46:08 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/05 10:41:13 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 ScavTrap::ScavTrap( void ){}
 
-ScavTrap::ScavTrap(std::string name){
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
     this->_Name = name;
     this->_Hitpoints = 100;
     this->_EnergyPoints = 50;
     this->_AttackDammage = 20;
-    std::cout << this->_Name << " ScavTrap constructor called" << std::endl;
+    std::cout << "ScavTrap constructor called" << std::endl;
     return ;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src){
+ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap(src._Name) {
     std::cout << "Copy ScavTrap constructor called" << std::endl;
     *this = src;
     return ;
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap( ScavTrap const & src){
 // ------------------ Destructor -------------------------//
 
 ScavTrap::~ScavTrap(){
-    std::cout << this->_Name << " ScavTrap Destructor called" << std::endl;
+    std::cout << "ScavTrap Destructor called" << std::endl;
     return ;
 }
 

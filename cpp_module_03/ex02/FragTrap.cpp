@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 12:22:27 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/01 12:52:04 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/05 10:42:23 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 FragTrap::FragTrap( void ){}
 
-FragTrap::FragTrap(std::string name){
+FragTrap::FragTrap(std::string name) :ClapTrap(name) {
     this->_Name = name;
     this->_Hitpoints = 100;
     this->_EnergyPoints = 100;
     this->_AttackDammage = 30;
-    std::cout << this->_Name << " FragTrap constructor called" << std::endl;
+    std::cout << "FragTrap constructor called" << std::endl;
     return ;
 }
 
-FragTrap::FragTrap( FragTrap const & src){
+FragTrap::FragTrap( FragTrap const & src) : ClapTrap(src._Name) {
     std::cout << "Copy FragTrap constructor called" << std::endl;
     *this = src;
     return ;
@@ -36,7 +36,7 @@ FragTrap::FragTrap( FragTrap const & src){
 // ------------------ Destructor -------------------------//
 
 FragTrap::~FragTrap(){
-    std::cout << this->_Name << " FragTrap Destructor called" << std::endl;
+    std::cout << "FragTrap Destructor called" << std::endl;
     return ;
 }
 

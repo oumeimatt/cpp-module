@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:33:15 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/03 12:41:44 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/05 10:50:47 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ class ClapTrap
         unsigned int _Hitpoints;
         unsigned int _EnergyPoints;
         unsigned int _AttackDammage;
-        ClapTrap( void ) { };
-    // private : 
+        ClapTrap( void );
 
     public:
         ClapTrap(std::string name);

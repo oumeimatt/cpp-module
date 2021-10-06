@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:23:42 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/03 11:40:31 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/05 10:41:49 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(std::string name) : _Name(name){
     this->_Hitpoints = 10;
     this->_EnergyPoints = 10;
     this->_AttackDammage = 0;
-    std::cout << this->_Name << " ClapTrap constructor called" << std::endl;
+    std::cout << "ClapTrap constructor called" << std::endl;
     return ;
 }
 
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap( ClapTrap const & src){
 // ------------------ Destructor -------------------------//
 
 ClapTrap::~ClapTrap(){
-    std::cout << this->_Name << " ClapTrap Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
     return ;
 }
 
@@ -65,12 +65,12 @@ void ClapTrap::attack(std::string const & target){
 void ClapTrap::takeDamage(unsigned int amount){
     if (this->_Hitpoints <= 0)
     {
-        std::cout << "ClapTrap " << this->_Name << " is already dead! (cant take more damage)" << std::endl;
+        std::cout << "ClapTrap " << this->_Name << " is already dead! (cannot take more damage)" << std::endl;
         return ;
     }
     this->_Hitpoints -= amount;
     if (this->_Hitpoints > 0){
-        std::cout << "ClapTrap " << this->_Name << " has " << this->_Hitpoints << " hitpoints";
+        std::cout << "ClapTrap " << this->_Name << " have " << this->_Hitpoints << " hitpoints";
         std::cout << " after taking " << amount << " points of damage" << std::endl;
     }
     else {
@@ -81,9 +81,12 @@ void ClapTrap::takeDamage(unsigned int amount){
 
 void ClapTrap::beRepaired(unsigned int amount){
     if (this->_Hitpoints <= 0)
-        std::cout << "ClapTrap " << this->_Name << "is already dead! (cant be repaired)" << std::endl;
+        std::cout << this->_Name << "is already dead! (cannot be repaired)" << std::endl;
     else {
         this->_Hitpoints += amount;
+        this->_EnergyPoints += amount;
         std::cout << this->_Name << " restored " << amount << " points!" << std::endl;
+        std::cout << "[ Current HPS = " << this->_Hitpoints << " ; current EPS = ";
+        std::cout << this->_EnergyPoints << " ]" << std::endl;
     }
 }

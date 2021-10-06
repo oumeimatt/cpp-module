@@ -6,13 +6,13 @@
 #    By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/01 12:20:50 by oel-yous          #+#    #+#              #
-#    Updated: 2021/10/03 10:29:39 by oel-yous         ###   ########.fr        #
+#    Updated: 2021/10/06 09:34:50 by oel-yous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 
-NAME = a.out
+NAME = DIAMONDTRAP
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
