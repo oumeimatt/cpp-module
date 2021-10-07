@@ -5,7 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/06 13:14:07 by oel-yous          #+#    #+#              #
+#    Created: 2021/10/07 14:48:02 by oel-yous          #+#    #+#              #
 #    Updated: 2021/10/07 15:31:35 by oel-yous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -16,6 +16,7 @@ NAME = a.out
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp \
 
 
 FLAGS =  -Wall -Werror -Wextra 
