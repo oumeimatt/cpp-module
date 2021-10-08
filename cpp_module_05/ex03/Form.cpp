@@ -76,7 +76,7 @@ void Form::beSigned(Bureaucrat & bureaucrat){
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 	{
 		std::cout << this->_Name << " cannot be signed because its ";
-		throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 	}
 	this->_isSigned = 1;
 }

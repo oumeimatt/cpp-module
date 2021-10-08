@@ -3,12 +3,7 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
-typedef Form*(Intern::*fptr)(std::string);
-Intern::Intern(){
-}
-
-// Intern::Intern( const Intern & src ){
-// }
+Intern::Intern(){}
 
 
 /*
@@ -38,16 +33,8 @@ Form *  Intern::createPresidentialPardonForm(std::string target){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Intern &				Intern::operator=( Intern const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
-
 /**/
+typedef Form*(Intern::*fptr)(std::string);
 Form * Intern::makeForm(std::string name, std::string target)
 {
     fptr PTRF[3] = {&Intern::createShrubberyCreationForm, &Intern::createRobotomyRequestForm, &Intern::createPresidentialPardonForm};

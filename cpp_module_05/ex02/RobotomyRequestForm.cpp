@@ -40,10 +40,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
 		throw Bureaucrat::GradeTooLowException();
 	srand((unsigned) time(0));
 	int i = rand() % 10;
-	std::cout << i << std::endl;
 	if (i % 2 == 0)
 		std::cout << this->_target << " has been robotomized successfully!" << std::endl;
 	else
-		std::cout << this->_target << " failed to robotomize!" << std::endl;
+		std::cout << this->_target << " failed!" << std::endl;
 }
 /* ************************************************************************** */

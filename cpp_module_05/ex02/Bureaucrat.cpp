@@ -17,24 +17,18 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _Name(name), _Grade(
 	}
 	return ;
 }
-Bureaucrat:: Bureaucrat(){
-	return ;
-}
+Bureaucrat:: Bureaucrat(){}
 
 Bureaucrat:: Bureaucrat( const  Bureaucrat & src ){
     *this = src;
     return ;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Bureaucrat::~ Bureaucrat(){
-	return ;
-}
-
+Bureaucrat::~ Bureaucrat(){}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------

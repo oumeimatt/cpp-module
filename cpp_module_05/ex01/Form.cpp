@@ -4,13 +4,21 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+Form::Form() :_gradeToSign(0),_gradeToExecute(0) {}
+
 Form::Form( std::string name,  int gradetoS, int gradetoE) : _Name(name) , _gradeToSign(gradetoS), _gradeToExecute(gradetoE)
 {
-	if (this->_gradeToExecute > 150 || this->_gradeToSign > 150)
-		throw Form::GradeTooLowException();
-	if (this->_gradeToExecute < 1 || this->_gradeToSign < 1)
-		throw Form::GradeTooHighException();
 	this->_isSigned = 0;
+	if (this->_gradeToExecute > 150 || this->_gradeToSign > 150)
+	{
+		std::cout << this->_Name << " cannot be created because its ";
+		throw Form::GradeTooLowException();
+	}
+	if (this->_gradeToExecute < 1 || this->_gradeToSign < 1)
+	{
+		std::cout << this->_Name << " cannot be created because its ";
+		throw Form::GradeTooHighException();
+	}
 }
 
 Form::Form( const Form & src ) : _Name(src._Name), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute){
@@ -23,7 +31,7 @@ Form::Form( const Form & src ) : _Name(src._Name), _gradeToSign(src._gradeToSign
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Form::~Form(){ return ; }
+Form::~Form(){}
 
 
 /*
@@ -41,8 +49,9 @@ Form &				Form::operator=( Form const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
-	o << "Form " << i.getName() << " required grade " << i.getGradeTosign() << " to sign it ,";
-	o << " and grade " << i.getGradeToExecute() << " to execute it.";
+	o << "Form name : " << i.getName() << std::endl; 
+	o << "grade required to sign it : " << i.getGradeTosign() << std::endl;
+	o << "grade required to execute it : " << i.getGradeToExecute() << std::endl;
 	return o;
 }
 
@@ -66,7 +75,10 @@ int Form::getGradeToExecute( void ) const{
 
 void Form::beSigned(Bureaucrat & bureaucrat){
 	if (bureaucrat.getGrade() > this->_gradeToSign)
-		throw Form::GradeTooLowException();
+	{
+		std::cout << this->_Name << " cannot be signed beacause its ";
+		throw Form::GradeTooHighException();
+	}
 	this->_isSigned = 1;
 }
 /* ************************************************************************** */

@@ -6,19 +6,20 @@
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _Name(name), _Grade(grade){
 	if (this->_Grade < 1)
+	{
+		std::cout << this->_Name << " cannot be created because " ;
 		throw Bureaucrat::GradeTooHighException();
+	}
 	if (this->_Grade > 150)
+	{
+		std::cout << this->_Name << " cannot be created because " ;
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << "Bureaucrat constructor called !" << std::endl;
+	}
 	return ;
 }
-Bureaucrat:: Bureaucrat(){
-	std::cout << "Default Bureaucrat constructor called !" << std::endl;
-	return ;
-}
+Bureaucrat::Bureaucrat(){}
 
-Bureaucrat:: Bureaucrat( const  Bureaucrat & src ){
-	std::cout << "Copy Bureaucrat constructor called!" << std::endl;
+Bureaucrat::Bureaucrat( const  Bureaucrat & src ){
     *this = src;
     return ;
 }
@@ -28,17 +29,14 @@ Bureaucrat:: Bureaucrat( const  Bureaucrat & src ){
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Bureaucrat::~ Bureaucrat(){
-	// std::cout << "Bureaucrat destructor called !" << std::endl;
-	return ;
-}
+Bureaucrat::~Bureaucrat(){}
 
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Bureaucrat &				 Bureaucrat::operator=(  Bureaucrat const & rhs ){
+Bureaucrat &				Bureaucrat::operator=(  Bureaucrat const & rhs ){
 	if ( this != &rhs )
 	{
 		this->_Name = rhs.getName();

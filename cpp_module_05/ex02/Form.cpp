@@ -49,8 +49,9 @@ Form &				Form::operator=( Form const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
-	o << "Form " << i.getName() << " required grade " << i.getGradeTosign() << " to sign it ,";
-	o << " and grade " << i.getGradeToExecute() << " to execute it.";
+	o << "Form name : " << i.getName() << std::endl; 
+	o << "grade required to sign it : " << i.getGradeTosign() << std::endl;
+	o << "grade required to execute it : " << i.getGradeToExecute() << std::endl;
 	return o;
 }
 
@@ -76,7 +77,7 @@ void Form::beSigned(Bureaucrat & bureaucrat){
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 	{
 		std::cout << this->_Name << " cannot be signed because its ";
-		throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 	}
 	this->_isSigned = 1;
 }

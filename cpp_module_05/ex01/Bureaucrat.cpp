@@ -6,16 +6,22 @@
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _Name(name), _Grade(grade){
 	if (this->_Grade < 1)
+	{
+		std::cout << this->_Name << " cannot be created because " ;
 		throw Bureaucrat::GradeTooHighException();
+	}
 	if (this->_Grade > 150)
+	{
+		std::cout << this->_Name << " cannot be created because " ;
 		throw Bureaucrat::GradeTooLowException();
+	}
 	return ;
 }
-Bureaucrat:: Bureaucrat(){
+Bureaucrat::Bureaucrat(){
 	return ;
 }
 
-Bureaucrat:: Bureaucrat( const  Bureaucrat & src ){
+Bureaucrat::Bureaucrat( const  Bureaucrat & src ){
     *this = src;
     return ;
 }
@@ -25,7 +31,7 @@ Bureaucrat:: Bureaucrat( const  Bureaucrat & src ){
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Bureaucrat::~ Bureaucrat(){
+Bureaucrat::~Bureaucrat(){
 	return ;
 }
 
@@ -78,8 +84,7 @@ void Bureaucrat::signForm( Form & form ){
 		std::cout << this->_Name << " signs " << form.getName() << std::endl;
 	else
 	{
-		std::cout << this->_Name << " cannot sign " << form.getName() << " because ";
-		std::cout << "Form's grade is too low." << std::endl;
+		std::cout << this->_Name << " cannot sign " << form.getName() << std::endl;
 	}
 }
 /* ************************************************************************** */

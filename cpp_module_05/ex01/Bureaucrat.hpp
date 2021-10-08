@@ -13,10 +13,10 @@ class  Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
-		Bureaucrat(  Bureaucrat const & src );
+		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 
-		Bureaucrat &		operator=(  Bureaucrat const & rhs );
+		Bureaucrat &		operator=( Bureaucrat const & rhs );
 		void incrementGrade( void );
 		void decrementGrade( void );
 		std::string getName( void ) const;
