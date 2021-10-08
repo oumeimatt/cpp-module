@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:16 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/08 18:02:09 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/08 18:18:14 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(){
     //RobotomyRequestForm  test 
     try {
         Bureaucrat bur2("BUREAUCRAT", 40);
-        RobotomyRequestForm rob("test1");
+        RobotomyRequestForm rob("bender");
 
         rob.beSigned(bur2);
         bur2.signForm(rob);
@@ -54,7 +54,7 @@ int main(){
     //PresidentialPardonForm test
     try {
         Bureaucrat bur3("BUREAUCRAT", 9);
-        PresidentialPardonForm pres("TEST2");
+        PresidentialPardonForm pres("prisoner");
 
         pres.beSigned(bur3);
         bur3.signForm(pres);

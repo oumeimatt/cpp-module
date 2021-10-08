@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:16 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/08 18:15:35 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/08 18:17:33 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main(){
         Intern someRandomIntern3;
         Bureaucrat bur3("BUREAUCRAT", 2);
         Form* rrf3;
-        rrf3 = someRandomIntern3.makeForm("presidential pardon", "target");
+        rrf3 = someRandomIntern3.makeForm("presidential pardon", "prisoner");
         rrf3->beSigned(bur3);
         bur3.signForm(*rrf3);
         delete rrf3;
