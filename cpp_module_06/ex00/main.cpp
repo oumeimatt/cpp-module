@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 11:23:42 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/11 13:20:21 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/13 10:33:37 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,15 @@ void    convertToFloat(char **argv, char c)
 {
 	std::cout << "float: ";
 	if (getArgType(argv)){
-		std::cout << static_cast<float> (c) << std::endl;
+		std::cout << static_cast<float> (c) << ".0f" << std::endl;
 		return ;
 	}
 	try{
-	   float i = std::stof(argv[1], 0);
-	   std::cout << std::fixed << std::setprecision(1) << static_cast<float> (i) << "f" << std::endl;
+		float i = std::stof(argv[1], 0);
+		if (i == (int)i)
+	   		std::cout  << static_cast<float> (i) << ".0f" << std::endl;
+		else
+			std::cout  << static_cast<float> (i) << "f" << std::endl;
 	}
 	catch(std::exception &e)
 	{
@@ -60,12 +63,15 @@ void    convertToDouble(char **argv, char c)
 {
 	std::cout << "double: ";
 	if (getArgType(argv)){
-		std::cout << static_cast<double>(c)<< std::endl;
+		std::cout << static_cast<double>(c) << ".0" << std::endl;
 		return ;
 	}
 	try{
-	   double i = std::stod(argv[1],0);
-	   std::cout << static_cast<double> (i) << std::endl;
+		double i = std::stod(argv[1],0);
+		if (i == (int)i)
+			std::cout << static_cast<double> (i) << ".0" <<  std::endl;
+		else
+			std::cout << static_cast<double> (i) << std::endl;
 	}
 	catch(std::exception &e)
 	{
