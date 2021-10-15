@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:53:45 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/14 16:50:26 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:35:50 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ private:
 
 
 template <typename T>
-Array<T>::Array() :  _n(0), _arr(new T()) {};
+Array<T>::Array() :  _n(0), _arr(new T[0]) {};
 
 
 template <typename T>
@@ -56,12 +56,12 @@ Array<T>::Array(Array<T> const & src){
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=( Array<T> const & rhs ){
-    if (*this != rhs){
-        delete [] this->_arr;
+Array<T>& Array<T>::operator=( Array<T> const & rhs ) {
+    if (this != &rhs) {
         this->_n = rhs.size();
         this->_arr = new T[_n];
-        *(this->_arr) = *(rhs._arr);
+        for (unsigned int i = 0; i < _n; i++)
+            this->_arr[i] = rhs._arr[i];
     }
     return (*this);
 }
@@ -97,4 +97,4 @@ void Array<T>::setArray( T *arr ){
     for (unsigned int i = 0; i < this->_n; i++)
         this->_arr[i] = arr[i];
 }
-#endif 
+#endif
