@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 14:46:42 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/06 10:56:51 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/06 11:17:32 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 
 int main()
 {
+    Dog basic;
+    {
+        basic.setBrain("haha");
+        Dog tmp = basic;
+        std::cout << basic.getBrain() << std::endl;
+        std::cout << tmp.getBrain() << std::endl;
+    }
     const Animal *animals[10];
     std::cout << "--------------------------" << std::endl;
     for (int i = 0; i < 10; i++)

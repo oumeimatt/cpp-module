@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:16 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/08 18:17:33 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:45:27 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 #include "Intern.hpp"
 
 int main(){
-
-
-    // test1 
+    test1 
     try {
     Intern someRandomIntern;
     Bureaucrat bur("BUREAUCRAT", 5);
