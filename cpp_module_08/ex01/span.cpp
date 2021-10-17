@@ -6,7 +6,7 @@
 /*   By: oel-yous <oel-yous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:12:48 by oel-yous          #+#    #+#             */
-/*   Updated: 2021/10/16 18:16:58 by oel-yous         ###   ########.fr       */
+/*   Updated: 2021/10/17 13:56:40 by oel-yous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int Span::longestSpan(){
 }
 
 void Span::addNbrs(std::vector<int>::iterator beg, std::vector<int>::iterator end){
-    if (this->_myvec.size() >= this->_N)
+    if (this->_myvec.size() >= this->_N || (this->_N - std::distance(beg, end)) < 0)
         throw (std::exception());
-    _myvec.insert(_myvec.begin(), beg, end);
+    _myvec.insert(_myvec.end(), beg, end);
 }
 
 
